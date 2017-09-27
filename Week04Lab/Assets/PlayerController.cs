@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     Rigidbody2D rb;
-    float speed = 2;
+    float speed = 15;
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        float x = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector3(x,0,0) * speed * Time.fixedTime;
+	void FixedUpdate () {
+        float x = Input.GetAxis("Horizontal") * speed;
+        rb.velocity = new Vector3(x,0,0) ;
 	}
 }
